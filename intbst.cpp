@@ -6,7 +6,6 @@
 
 #include <iostream>
 #include <limits>
-using std::cout;
 
 // constructor sets up empty tree
 IntBST::IntBST() : root(0) {}
@@ -188,7 +187,7 @@ int IntBST::getSuccessor(int value) const {
   if (tmp) {
     return tmp->info;
   }
-  return std::numeric_limits<int>::max();
+  return 0;
 }
 
 // deletes the Node containing the given value from the tree
@@ -250,14 +249,11 @@ bool IntBST::remove(int value) {
         return true;
     } else {
     int repl_val = getSuccessor(value);
-    if(repl_val == std::numeric_limits<int>::max()) {
+    if(repl_val == 0) {
         repl_val = getPredecessor(value);
     }
-    //std::cout << repl_val << std::endl;
-    std::cout << "root left " << std::endl;
     remove(repl_val);
     rmv->info = repl_val;
-    std::cout << root->left->info << std::endl;
   }
   return true;
 }
