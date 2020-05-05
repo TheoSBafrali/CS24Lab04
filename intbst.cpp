@@ -140,7 +140,7 @@ bool IntBST::contains(int value) const {
 
 // returns the Node containing the predecessor of the given value
 IntBST::Node *IntBST::getPredecessorNode(int value) const {
-  int candidate = 0;
+  int candidate = std::numeric_limits<int>::min();
   IntBST::Node *n = this->root;
   while (n != nullptr) {
     if (n->info > candidate && n->info < value) {
