@@ -73,10 +73,12 @@ int main(){
     {
         cout << "  removing 4" << endl;
         bst1.remove(4);
+        bst1.printInOrder();
         cout << "  removing 64" << endl;
         bst1.remove(64);
-        cout << "  removing 128" << endl;
-        bst1.remove(128);
+        bst1.printInOrder();
+        //cout << "  removing 128" << endl;
+        //bst1.remove(128);
         cout << "  contains 64? " << (bst1.contains(64) ? "Y" : "N") << endl;
         cout << "  contains 4? " << (bst1.contains(4) ? "Y" : "N") << endl;
         cout << "  contains 16? " << (bst1.contains(16) ? "Y" : "N") << endl;
